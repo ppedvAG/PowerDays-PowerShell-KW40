@@ -36,10 +36,12 @@ param(
 [string]$Computername = "localhost",
 
 [Parameter(Mandatory=$true)]
+[ValidateSet(4624,4625,4634)]
 [int]$EventId,
 
+[Validaterange(5,10)]
 [int]$Newest = 5
 )
-
+$Newest = 3
 Write-Verbose -Message "ZusatzInfo: Vom User wurde folgende EventID übergeben: $EventId"
 Get-EventLog -LogName Security -ComputerName $Computername | Where-Object EventId -eq $EventId | Select-Object -First $Newest
