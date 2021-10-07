@@ -2,6 +2,7 @@
 # PowerShell PowerDays
 
 Kursdateien begleitend zum ppedv AG Kurs: PowerShell PowerDays 
+
 [KursBlatt](https://ppedv.de/schulung/kurse/WindowsPowerShellCorecmdletScriptWMIlernenFortgeschrittenWorkflowProgrammierungSeminarTraining.aspx)
 
 | Thema | Beschreibung |
