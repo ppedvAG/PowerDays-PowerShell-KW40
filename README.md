@@ -9,3 +9,4 @@ Kursdateien begleitend zum ppedv AG Kurs: PowerShell PowerDays
 | ----- | ------------ |
 | 01-Git | In diesem Modul wird Git behandelt und erklärt warum es für PowerShell Skripte Essentiel sein kann |
 | 02-Skripting | In diesem Modul geht es um die Erstellung von sauberen PowerShell Skripten mit Parametern, CommentBasedHelp, . . . |
+| 03-Skriptuebung | Skriptuebung - Lösung der Teilnehmer und Trainer |
