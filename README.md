@@ -1,3 +1,4 @@
+![ppedv AG FirmenLogo](https://ppedv.de/microsoftexperte/Images/ppedvStartbild.png)
 # PowerShell PowerDays
 
 Kursdateien begleitend zum ppedv AG Kurs: PowerShell PowerDays 
