@@ -8,10 +8,14 @@ param(
     [string]$DirName = "Testfiles",
 
     [ValidateRange(1,999)]
-    [int]$DirCount,
+    [int]$DirCount = 3,
 
     [ValidateRange(1,999)]
-    [int]$FileCount,
+    [int]$FileCount = 9,
+
+    #prüft ob der Dateiname aus 3 bis 5 zeichen besteht und auf .zip endet
+    [ValidatePattern('[a-zA-Z]{3,5}(.zip)$')]
+    [string]$Zipname = "nozip",
 
     [switch]$Force
 )
@@ -45,10 +49,14 @@ else
 {
     New-Item -Path $TestFilesPath -ItemType Directory
 }
+Write-Progress -Activity "Erstelle TestFiles" -Status "Beginne" -PercentComplete 1 -Id 1
 
 #Dateien im "Root" Verzeichnis anlegen
 for($i = 1; $i -le $FileCount; $i ++)
 {
+    #Write-Progress -Activity "Erstelle TestFiles" -Status "Erstelle Datei $i von $($FileCount * ($DirCount + 1))" -PercentComplete ((100 / ($FileCount * ($DirCount + 1))) * $i) -Id 1
+    Write-Verbose -Message ((100 / ($FileCount * ($DirCount + 1))) * $i)
+    
     $filenumber = "{0:D3}" -f $i #zahl mit 3 führenden nullen erzeugen
     New-Item -Path $TestFilesPath -Name "File-$filenumber.txt" -ItemType File
 }
@@ -63,8 +71,16 @@ for($i = 1; $i -le $DirCount; $i++)
 
     for($j = 1; $j -le $FileCount; $j ++)
     {
+        #Write-Progress -Activity "Erstelle TestFiles" -Status "Erstelle Datei" -PercentComplete ((100 / ($FileCount * ($DirCount + 1))) * ($j + ($FileCount * $i))) -Id 1
+        Write-Verbose -Message ((($FileCount * ($DirCount + 1))) * ($j + ($FileCount * $i)))
+        
         $Filenumber = "{0:D3}" -f $j
         New-Item -Path $Ordner.FullName -Name "Ordner$Dirnumber-Datei-$filenumber.txt" -ItemType File
     }
+}
+
+if($Zipname -ne "nozip")
+{
+    Compress-Archive -Path $TestFilesPath -DestinationPath ($TestFilesPath + ".zip" )
 }
 
