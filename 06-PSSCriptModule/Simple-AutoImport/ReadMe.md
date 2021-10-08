@@ -1,8 +1,9 @@
 #SkriptModul mit Auto Import
 
-Das PowerShell Skript Module automatisch geladen werden können müssen die .psm1 und der Ordnername gleich benannt sein. Der Name des Ordners entspricht auch dann dem Namen des Moduls. Desweiteren muss sich der Ordner im "richtigen" Pfad befinden.
+Das PowerShell Skript Module automatisch geladen werden können müssen die *.psm1* und der Ordnername gleich benannt sein. Der Name des Ordners entspricht auch dann dem Namen des Moduls. Desweiteren muss sich der Ordner im "richtigen" Pfad befinden.
 
-Den richtigen Pfad kann man der Umgebungsvariable PSModulePath entnehmen welcher wie folgt über die PowerShell abefragt werden kann:
+Den richtigen Pfad kann man der Umgebungsvariable *PSModulePath* entnehmen welcher wie folgt über die PowerShell abefragt werden kann:
+
 `$env:PSModulepath`
 
 Standardmäßig existieren 3 Pfade:
